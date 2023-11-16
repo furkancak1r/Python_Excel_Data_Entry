@@ -1,0 +1,14 @@
+Public Sub UnmergeAndFillAll()
+    Dim ws As Worksheet
+    Dim cell As Range
+    Dim mergedCells As Range
+    For Each ws In ThisWorkbook.Worksheets
+        For Each cell In ws.UsedRange
+            If cell.MergeCells Then
+                Set mergedCells = cell.MergeArea
+                cell.MergeCells = False
+                mergedCells.Value = cell.Value
+            End If
+        Next cell
+    Next ws
+End Sub
