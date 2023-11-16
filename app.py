@@ -52,7 +52,7 @@ while True:
 
             cell_start = input("Başlangıç hücresini girin: ")
 
-            # Get the UsedRange's maximum row number
+            
             sheet = workbook.Worksheets(rot_data[selected_rot][1])
 
             max_row = sheet.UsedRange.Rows.Count
@@ -90,7 +90,7 @@ while True:
                                 # Hücrenin değerini sonuca eşitle
                                 # Sayacı 4 basamaklı bir string olarak formatla ve sonuca ekle
                                 # Seçilen rota kodunu da sonuca ekle
-                                cell.Value = result + f"{counter:04d} - {rot_data[selected_rot][0]}"
+                                cell.Value = result + f"{counter:04d}-{rot_data[selected_rot][0]}"
                                 adjacent_cell = sheet.Cells(cell.Row, cell.Column + 1)
                                 adjacent_cell.Value = f"{workbook_prefix} {rot_data[selected_rot][1]}"
                                 # Hücrenin solundaki hücre sayısı kadar ters döngü yap
