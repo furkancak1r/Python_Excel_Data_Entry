@@ -94,11 +94,17 @@ while True:
                                 adjacent_cell = sheet.Cells(cell.Row, cell.Column + 1)
                                 adjacent_cell.Value = f"{workbook_prefix} {rot_data[selected_rot][1]}"
                                 # Hücrenin solundaki hücre sayısı kadar ters döngü yap
+                               # Hücrenin solundaki hücre sayısı kadar ters döngü yap
                                 for i in reversed(range(cell_left_count)):
                                     # Hücrenin solundaki hücreyi bul
                                     left_cell = sheet.Cells(cell.Row, cell.Column - (i + 1))
                                     # Hücrenin değerine solundaki hücrenin değerini de ekle
-                                    adjacent_cell.Value += " " + str(left_cell.Value)
+                                    left_cell_value = left_cell.Value
+                                    # Eğer solundaki hücrede sayı varsa ve ondalık kısmı 0 ise, ondalık kısmı kaldır
+                                    if isinstance(left_cell_value, (int, float)) and left_cell_value.is_integer():
+                                        left_cell_value = int(left_cell_value)
+                                    adjacent_cell.Value += " " + str(left_cell_value)
+
                                 # Sayacı 1 arttır
                                 counter += 1
                             used_range = sheet.UsedRange
