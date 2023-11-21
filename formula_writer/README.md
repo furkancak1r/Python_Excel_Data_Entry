@@ -1,4 +1,4 @@
-# Excel Automation Script
+# Excel Formula Script
 
 ## Overview
 

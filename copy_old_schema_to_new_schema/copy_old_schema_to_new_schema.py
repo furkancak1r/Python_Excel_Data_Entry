@@ -1,3 +1,13 @@
+# This Python script is designed to read data from old Excel files and write it into new Excel files. It uses the openpyxl library to interact with Excel files.
+
+# The script first loads a JSON file that contains the names of Excel files. It then iterates over all Excel files in a specified directory (old_excel_directory). For each old Excel file, it opens the workbook and checks each sheet for specific search values ("MODUL", "MODÜL").
+
+# If these values are found, it collects the values in the rows below these cells and stores them in lists. It then adjusts the order of some of these lists to meet a specific format.
+
+# The script then iterates over new Excel files in a different directory (new_excel_directory). If it finds a new Excel file that matches the name of the sheet it's currently processing, it opens the new workbook and writes the collected values into specific columns of the active sheet.
+
+# The script also handles exceptions and prints an error message if it encounters any issues when opening a workbook.
+
 import os
 import json
 from openpyxl import load_workbook
