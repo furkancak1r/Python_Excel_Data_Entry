@@ -14,9 +14,9 @@ from openpyxl import load_workbook
 from openpyxl.styles import Alignment
 
 
-new_excel_directory = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Python_Excel_Data_Entry\\Şablonlar_rev01\\yeni_exceller"
-old_excel_directory = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Python_Excel_Data_Entry\\Şablonlar_rev01\\old_exceller"
-json_file_path = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Python_Excel_Data_Entry\\copy_old_schema_to_new_schema\\excel_names_2.json"
+new_excel_directory = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Planlama\\Python_Excel_Data_Entry\\Şablonlar_rev01\\yeni_exceller"
+old_excel_directory = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Planlama\\Python_Excel_Data_Entry\\Şablonlar_rev01\\old_exceller"
+json_file_path = "C:\\Users\\furkan.cakir\\Desktop\\FurkanPRS\\Kodlar\\Planlama\\Python_Excel_Data_Entry\\copy_old_schema_to_new_schema\\excel_names_2.json"
 
 with open(json_file_path, "r", encoding="utf-8") as json_file:
     excel_names_json = json.load(json_file)
